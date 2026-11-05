@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cravo e Canela — padaria artesanal de fermentação lenta. Pães de massa mãe, croissants de canela e café coado todos os dias." />
+  <title>Cravo e Canela — Padaria Artesanal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="Design.css" />
+</head>
+<body>
+
+  <header class="topo header">
+    <h1 class="logo">Cravo e Canela</h1>
+    <nav id="menu-nav" aria-label="Menu principal">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#cardapio">Cardápio</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="topo-acoes">
+      <button id="carrinho-abrir" class="btn-icone" type="button" aria-label="Abrir carrinho">
+        🛒 <span id="carrinho-contador" class="contador oculto">0</span>
+      </button>
+      <button id="menu-toggle" class="btn-icone" type="button" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <p class="hero-sub">Padaria artesanal</p>
+      <h2>Fermentação lenta, forno quente e o cheiro de canela</h2>
+      <p>Pães de massa mãe, croissants e café coado, todos os dias.</p>
+      <a class="botao" href="#cardapio">Ver cardápio</a>
+    </section>
+
+    <section id="sobre" class="secao revelar">
+      <h2>Nossa história</h2>
+      <p>
+        A Cravo e Canela nasceu da paixão por pão de verdade: massa descansada por horas,
+        ingredientes simples e muito cuidado. Cada fornada sai quentinha para o balcão,
+        sempre com um toque de cravo e canela na memória de quem prova.
+      </p>
+    </section>
+
+    <section id="cardapio" class="secao">
+      <h2>Cardápio</h2>
+      <div class="filtros">
+        <button class="filtro-btn ativo" data-categoria="todos" type="button">Todos</button>
+        <button class="filtro-btn" data-categoria="paes" type="button">Pães</button>
+        <button class="filtro-btn" data-categoria="doces" type="button">Doces</button>
+        <button class="filtro-btn" data-categoria="bolos" type="button">Bolos</button>
+        <button class="filtro-btn" data-categoria="cafes" type="button">Cafés</button>
+      </div>
+
+      <div class="cards">
+        <article class="card produto-card revelar" data-categoria="paes">
+          <span class="emoji">🥖</span><h3>Pão de massa mãe</h3>
+          <p>Casca crocante, miolo macio.</p>
+          <div class="card-rodape"><strong>R$ 18,00</strong>
+            <button class="btn-adicionar" data-nome="Pão de massa mãe" data-preco="18.00" type="button">Adicionar</button></div>
+        </article>
+        <article class="card produto-card revelar" data-categoria="paes">
+          <span class="emoji">🥐</span><h3>Croissant de manteiga</h3>
+          <p>Folhado, dourado e amanteigado.</p>
+          <div class="card-rodape"><strong>R$ 9,50</strong>
+            <button class="btn-adicionar" data-nome="Croissant de manteiga" data-preco="9.50" type="button">Adicionar</button></div>
+        </article>
+        <article class="card produto-card revelar" data-categoria="doces">
+          <span class="emoji">🌀</span><h3>Rolinho de canela</h3>
+          <p>Nossa especialidade, com cobertura.</p>
+          <div class="card-rodape"><strong>R$ 11,00</strong>
+            <button class="btn-adicionar" data-nome="Rolinho de canela" data-preco="11.00" type="button">Adicionar</button></div>
+        </article>
+        <article class="card produto-card revelar" data-categoria="doces">
+          <span class="emoji">🍮</span><h3>Pudim de cravo</h3>
+          <p>Cremoso, com calda de caramelo.</p>
+          <div class="card-rodape"><strong>R$ 10,00</strong>
+            <button class="btn-adicionar" data-nome="Pudim de cravo" data-preco="10.00" type="button">Adicionar</button></div>
+        </article>
+        <article class="card produto-card revelar" data-categoria="bolos">
+          <span class="emoji">🍰</span><h3>Bolo de cenoura</h3>
+          <p>Com cobertura de chocolate.</p>
+          <div class="card-rodape"><strong>R$ 8,50</strong>
+            <button class="btn-adicionar" data-nome="Bolo de cenoura" data-preco="8.50" type="button">Adicionar</button></div>
+        </article>
+        <article class="card produto-card revelar" data-categoria="bolos">
+          <span class="emoji">🎂</span><h3>Bolo de fubá</h3>
+          <p>Simples, fofinho, de vó.</p>
+          <div class="card-rodape"><strong>R$ 7,50</strong>
+            <button class="btn-adicionar" data-nome="Bolo de fubá" data-preco="7.50" type="button">Adicionar</button></div>
+        </article>
+        <article class="card produto-card revelar" data-categoria="cafes">
+          <span class="emoji">☕</span><h3>Café coado</h3>
+          <p>Grãos selecionados, passado na hora.</p>
+          <div class="card-rodape"><strong>R$ 6,00</strong>
+            <button class="btn-adicionar" data-nome="Café coado" data-preco="6.00" type="button">Adicionar</button></div>
+        </article>
+        <article class="card produto-card revelar" data-categoria="cafes">
+          <span class="emoji">🥛</span><h3>Cappuccino de canela</h3>
+          <p>Espuma cremosa e canela por cima.</p>
+          <div class="card-rodape"><strong>R$ 12,00</strong>
+            <button class="btn-adicionar" data-nome="Cappuccino de canela" data-preco="12.00" type="button">Adicionar</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contato" class="secao revelar">
+      <h2>Fale com a gente</h2>
+      <form id="form-contato" novalidate>
+        <label>Nome <input type="text" name="nome" autocomplete="name" /></label>
+        <label>E-mail <input type="email" name="email" autocomplete="email" /></label>
+        <label>Mensagem <textarea name="mensagem" rows="4"></textarea></label>
+        <button class="botao" type="submit">Enviar mensagem</button>
+        <p id="form-mensagem" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Rua Exemplo, 123 — São Paulo · Aberto todos os dias, das 7h às 19h</p>
+    <p>© <span id="ano"></span> Padaria Cravo e Canela</p>
+  </footer>
+
+  <aside id="carrinho-painel" aria-label="Carrinho">
+    <div class="carrinho-topo">
+      <h2>Seu pedido</h2>
+      <button id="carrinho-fechar" class="btn-icone" type="button" aria-label="Fechar carrinho">✕</button>
+    </div>
+    <ul id="carrinho-lista"></ul>
+    <div class="carrinho-total">Total: <strong id="carrinho-total">R$ 0,00</strong></div>
+    <button id="carrinho-finalizar" class="botao" type="button">Finalizar pelo WhatsApp</button>
+    <button id="carrinho-limpar" class="link-btn" type="button">Limpar carrinho</button>
+  </aside>
+
+  <button id="voltar-topo" type="button" aria-label="Voltar ao topo">↑</button>
+
+  <script src="Java.js"></script>
+</body>
+</html>
