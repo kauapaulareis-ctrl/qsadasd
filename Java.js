@@ -391,6 +391,10 @@ function iniciarAnimacaoRevelar() {
   const elementos = $$(".revelar");
   if (!elementos.length) return;
 
+  // Só esconde os elementos (via CSS) depois que o JS está pronto para revelá-los.
+  // Assim, se o script falhar, o conteúdo continua visível.
+  document.documentElement.classList.add("js-ativo");
+
   // Navegadores antigos: mostra tudo de uma vez
   if (!("IntersectionObserver" in window)) {
     elementos.forEach((el) => el.classList.add("visivel"));
@@ -424,12 +428,20 @@ function iniciarAnoRodape() {
    INICIALIZAÇÃO
    ========================================================================== */
 document.addEventListener("DOMContentLoaded", () => {
-  iniciarMenuMobile();
-  iniciarEventosDeRolagem();
-  iniciarRolagemSuave();
-  iniciarFiltroCardapio();
-  iniciarCarrinho();
-  iniciarFormularioContato();
-  iniciarAnimacaoRevelar();
-  iniciarAnoRodape();
+  [
+    iniciarMenuMobile,
+    iniciarEventosDeRolagem,
+    iniciarRolagemSuave,
+    iniciarFiltroCardapio,
+    iniciarCarrinho,
+    iniciarFormularioContato,
+    iniciarAnimacaoRevelar,
+    iniciarAnoRodape,
+  ].forEach((iniciar) => {
+    try {
+      iniciar();
+    } catch (erro) {
+      console.error(`Erro em ${iniciar.name}:`, erro);
+    }
+  });
 });
